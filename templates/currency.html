@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Currency Converter</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='currency.css') }}">
+  </head>
+  <body>
+    <h1>Currency Converter</h1>
+    <form action="/currency" method="post">
+      <input type="text" name="amount" placeholder="Enter amount">
+      <select name="from_currency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="JPY">JPY</option>
+        <option value="CHF">CHF</option>
+        <option value="CAD">CAD</option>
+        <option value="AUD">AUD</option>
+        <option value="NZD">NZD</option>
+      </select>
+      <p>to</p>
+      <select name="to_currency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="JPY">JPY</option>
+        <option value="CHF">CHF</option>
+        <option value="CAD">CAD</option>
+        <option value="AUD">AUD</option>
+        <option value="NZD">NZD</option>
+      </select>
+      <button type="submit">Convert</button>
+    </form>
+    {% if converted_amount %}
+    <p class="result">{{ amount }} {{ from_currency }} is equivalent to {{ converted_amount }} {{ to_currency }}</p>
+    {% endif %}
+
+  </body>
+
+</html>

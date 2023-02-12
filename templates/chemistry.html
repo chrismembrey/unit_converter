@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Chemistry Unit Converter</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='chemistry.css') }}">
+  </head>
+  <body>
+    <div class="converter-container">
+      <h1>Chemistry Unit Converter</h1>
+      <form action="{{ url_for('chemistry') }}" method="post">
+        <label for="value">Enter Value:</label>
+        <input type="text" name="value" id="value" required>
+        <br><br>
+
+        <label for="conversion_type">Conversion Type:</label>
+        <select name="conversion_type" id="conversion_type">
+          <option value="molality_to_molarity">Molality to Molarity</option>
+          <option value="molarity_to_molality">Molarity to Molality</option>
+          <option value="avogadro_to_molecules">Avogadro to Molecules</option>
+          <option value="molecules_to_avogadro">Molecules to Avogadro</option>
+          <option value="joules_to_calories">Joules to Calories</option>
+          <option value="calories_to_joules">Calories to Joules</option>
+          <option value="kelvin_to_celsius">Kelvin to Celsius</option>
+          <option value="celsius_to_kelvin">Celsius to Kelvin</option>
+          <option value="atm_to_pa">Atmospheres to Pascals</option>
+          <option value="pa_to_atm">Pascals to Atmospheres</option>
+          <option value="l_to_ml">Liters to Milliliters</option>
+          <option value="ml_to_l">Milliliters to Liters</option>
+          <option value="g_to_kg">Grams to Kilograms</option>
+          <option value="kg_to_g">Kilograms to Grams</option>
+          <option value="km_to_miles">Kilometers to Miles</option>
+          <option value="miles_to_km">Miles to Kilometers</option>
+          <option value="kph_to_mph">Kilometers per hour to Miles per hour</option>
+          <option value="ft_to_m">Feet to Meters</option>
+          <option value="m_to_ft">Meters to Feet</option>
+          <option value="in_to_cm">Inches to Centimeters</option>
+          <option value="cm_to_in">Centimeters to Inches</option>
+          <option value="lb_to_kg">Pounds to Kilograms</option>
+        </select>
+        <br><br>
+
+        <input type="submit" value="Convert">
+      </form>
+      {% if result is not none %}
+        <p>Result: {{ result }}</p>
+      {% endif %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Physics Unit Converter</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='physics.css') }}">
+  </head>
+  <body>
+    <div class="converter-container">
+      <h1>Physics Unit Converter</h1>
+      <form action="{{ url_for('physics') }}" method="post">
+        <label for="value">Enter Value:</label>
+        <input type="text" name="value" id="value" required>
+        <br><br>
+
+        <label for="conversion_type">Conversion Type:</label>
+        <select name="conversion_type" id="conversion_type">
+          <option value="joule_to_electron_volt">Joule to Electron Volt</option>
+          <option value="electron_volt_to_joule">Electron Volt to Joule</option>
+          <option value="meter_to_angstrom">Meter to Angstrom</option>
+          <option value="angstrom_to_meter">Angstrom to Meter</option>
+          <option value="hertz_to_wavenumber">Hertz to Wavenumber</option>
+          <option value="wavenumber_to_hertz">Wavenumber to Hertz</option>
+          <option value="newton_to_dyne">Newton to Dyne</option>
+          <option value="dyne_to_newton">Dyne to Newton</option>
+          <option value="pascal_to_bar">Pascal to Bar</option>
+          <option value="bar_to_pascal">Bar to Pascal</option>
+          <option value="meters_per_second_to_kilo_meters_per_hour">Meters per Second to Kilo Meters per Hour</option>
+          <option value="kilo_meters_per_hour_to_meters_per_second">Kilo Meters per Hour to Meters per Second</option>
+          <option value="coulombs_to_elementary_charge">Coulombs to Elementary Charge</option>
+          <option value="elementary_charge_to_coulombs">Elementary Charge to Coulombs</option>
+          <option value="joules_to_electron_volts">Joules to Electron Volts</option>
+          <option value="electron_volts_to_joules">Electron Volts to Joules</option>
+          <option value="meters_to_feet">Meters to Feet</option>
+          <option value="feet_to_meters">Feet to Meters</option>
+          <option value="meters_to_inches">Meters to Inches</option>
+          <option value="inches_to_meters">Inches to Meters</option>
+          <option value="kilograms_to_pounds">Kilograms to Pounds</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Convert">
+      </form>
+      {% if result is not none %}
+        <p>Result: {{ result }}</p>
+      {% endif %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+.header-box {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: lightgray;
+  padding: 20px;
+}
+
+.header {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.link-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.currency-link,
+.chemistry-link,
+.physics-link {
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.currency-link {
+  background-color: green;
+}
+
+.chemistry-link {
+  background-color: blue;
+}
+
+.physics-link {
+  background-color: purple;
+}
